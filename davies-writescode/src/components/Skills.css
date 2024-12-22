@@ -1,0 +1,255 @@
+/* Initial State */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+/* Active State */
+.fade-in.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Container for Full-Width Skills Section */
+.skills-container {
+  width: 100%;
+  min-height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  background-color: #f9fafb;
+}
+
+/* Wrapper for Graph and Text */
+.skills-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 1200px;
+  overflow: hidden;
+}
+
+/* Graph Section - Takes 2/4 Width */
+.skills-graph {
+  position: relative;
+  flex: 2;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Skill Bubbles */
+.skill-point {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.bubble {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.bubble:hover {
+  transform: scale(1.1);
+}
+
+@keyframes autoHover {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Automatic Hover Animation on Icons */
+.skill-point:nth-child(1) .bubble {
+  animation: autoHover 2s infinite 0s;
+}
+
+.skill-point:nth-child(2) .bubble {
+  animation: autoHover 2s infinite 0.2s;
+}
+
+.skill-point:nth-child(3) .bubble {
+  animation: autoHover 2s infinite 0.4s;
+}
+
+.skill-point:nth-child(4) .bubble {
+  animation: autoHover 2s infinite 0.6s;
+}
+
+.skill-point:nth-child(5) .bubble {
+  animation: autoHover 2s infinite 0.8s;
+}
+
+.skill-point:nth-child(6) .bubble {
+  animation: autoHover 2s infinite 1s;
+}
+
+.skill-point:nth-child(7) .bubble {
+  animation: autoHover 2s infinite 1.2s;
+}
+
+.skill-point:nth-child(8) .bubble {
+  animation: autoHover 2s infinite 1.4s;
+}
+
+.skill-point:nth-child(9) .bubble {
+  animation: autoHover 2s infinite 1.6s;
+}
+
+.skill-point:nth-child(10) .bubble {
+  animation: autoHover 2s infinite 1.8s;
+}
+
+.skill-name {
+  margin-top: 5px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Default positions (Big screens) */
+.react-skill { left: 20%; top: 30%; }
+.html-skill { left: 40%; top: 30%; }
+.css-skill { left: 60%; top: 30%; }
+
+.nodejs-skill { left: 10%; top: 50%; }
+.js-skill { left: 30%; top: 50%; }
+.python-skill { left: 50%; top: 50%; }
+.git-skill { left: 70%; top: 50%; }
+
+.figma-skill { left: 20%; top: 70%; }
+.database-skill { left: 40%; top: 70%; }
+.sass-skill { left: 60%; top: 70%; }
+
+.skill-point:hover .skill-name {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Text Section - Takes 1/3 Width */
+.skills-description {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.skills-description h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.skills-description p {
+  font-size: 1rem;
+  color: #4b5563;
+  
+}/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .skills-wrapper {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* Center Heading and Paragraph */
+  .skills-description {
+    order: -1; 
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .skills-description h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .skills-description p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  
+  .skills-graph {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%; 
+    gap: 10px;
+  }
+
+  .skill-point {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+  }
+
+  .bubble {
+    width: 60px;
+    height: 60px;
+  }
+
+  .skill-name {
+    font-size: 0.9rem;
+    margin-top: 5px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .react-skill { left: 0%; top: 10%; }
+  .html-skill { left: 0%; top: 10%; }
+  .css-skill { left: 0%; top: 25%; }
+
+  .nodejs-skill { left: 0%; top: 25%; }
+  .js-skill { left: 0%; top: 40%; }
+  .python-skill { left: 0%; top: 40%; }
+  .git-skill { left: 0%; top: 55%; }
+
+  .figma-skill { left: 0%; top: 55%; }
+  .database-skill { left: 0%; top: 70%; }
+  .sass-skill { left: 0%; top: 70%; }
+}
+
+@media (max-width: 640px) {
+  
+}
+
+@media (max-width: 480px) {
+  .bubble {
+    width: 50px;
+    height: 50px;
+  }
+
+  .skill-name {
+    font-size: 0.8rem;
+  }
+}
+
+
+
+

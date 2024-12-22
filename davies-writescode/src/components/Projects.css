@@ -1,0 +1,186 @@
+/* Container for the Full Section */
+.projects-container {
+    width: 100%;
+    min-height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    background-color: #f9fafb;
+  }
+  
+  /* Wrapper for Text and Cards */
+  .projects-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  /* Equal Flex for Text and Cards */
+  .projects-description {
+    flex: 1;
+    padding: 2rem;
+  }
+  
+  .projects-description h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .projects-description p {
+    font-size: 1rem;
+    color: #4b5563;
+    line-height: 1.6;
+  }
+  
+  /* Card Section: Equal Flex */
+  .projects-cards {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 500px;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  /* Project Card Styles */
+  .project-card {
+    position: absolute;
+    width: 250px;
+    height: 300px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.4s ease-in-out;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  /* Image Section with Gradient */
+  .project-card img {
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+    position: relative;
+  }
+  
+  /* Gradient Overlay */
+  .project-card .gradient-overlay {
+    position: absolute;
+    bottom: 40%;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(to top, white 20%, transparent 100%);
+  }
+  
+  /* App Logo (Center) */
+  .project-card .app-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .app-logo img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  /* Text Content Below the Image */
+  .project-card .card-content {
+    background-color: white;
+    padding: 1rem;
+  }
+  
+  .card-content h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .card-content p {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.4;
+  }
+  
+  /* Positioning Cards */
+  .project-card.center {
+    transform: scale(1.1);
+    z-index: 3;
+  }
+  
+  .project-card.left {
+    left: 0%;
+    transform: scale(0.9);
+    z-index: 1;
+  }
+  
+  .project-card.right {
+    right: 0%;
+    transform: scale(0.9);
+    z-index: 1;
+  }
+  
+  .project-card:hover {
+    transform: scale(1.05);
+  }
+  
+  @media (max-width: 768px) {
+    .projects-wrapper {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .projects-cards {
+      height: auto;
+      flex-direction: column;
+      justify-content: center;
+    }
+  
+    .project-card {
+      position: relative;
+      width: 90%;
+      max-width: 100%;
+      margin: 1rem auto; /* Add spacing between cards */
+      height: 350px;
+      transform: scale(1); /* Reset scaling */
+    }
+  
+    .project-card.left,
+    .project-card.right {
+      left: auto;
+      right: auto;
+      transform: scale(1); /* Reset scaling */
+      z-index: 2;
+    }
+  
+    .project-card.center {
+      transform: scale(1); /* Make sure all cards have the same size */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .project-card {
+      width: 90%; /* Take most of the screen width */
+      height: 300px;
+    }
+  }
+  
